@@ -15,7 +15,7 @@
     <description>DevOps_Project</description>
     <properties>
         <java.version>11</java.version>
-	<sonar.host.url>http://192.168.1.10:9000/</sonar.host.url>
+	<sonar.host.url>http://localhost:9000/</sonar.host.url>
         <sonar.qualitygate.wait>true</sonar.qualitygate.wait>
     </properties>
     <dependencies>
@@ -117,7 +117,7 @@
 <repository>
 	<id>deploymentRepo</id>
 	<name>Nexus Repository</name>
-	<url>http://192.168.1.10:8081/repository/maven-releases/</url>
+	<url>http://localhost/repository/maven-releases/</url>
 	</repository>
 </distributionManagement>
 
