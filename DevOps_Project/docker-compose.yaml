@@ -19,7 +19,7 @@ services:
 
   # Your Spring Boot Application Service
   devops_project:
-    image: ramyaouinet/ramyaouinet_5ia_g2_devops_project:1.0.0  # Your image name
+    image: ines912/inesmeddeb_5ia_g2_devops_project:1.0.0  # Your image name
     container_name: devops_project  # Change container name if necessary
     depends_on:
       - mysql
