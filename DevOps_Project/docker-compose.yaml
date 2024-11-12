@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  # MySQL Database Service
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    environment:
+      MYSQL_DATABASE: devops  # Changed to match your application properties
+      MYSQL_USER: root  # Changed to match your application properties
+      MYSQL_PASSWORD:   # Changed to match your application properties
+      MYSQL_ROOT_PASSWORD:   # Use the same password for root
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - devops_network
+
+  # Your Spring Boot Application Service
+  devops_project:
+    image: ramyaouinet/ramyaouinet_5ia_g2_devops_project:1.0.0  # Your image name
+    container_name: devops_project  # Change container name if necessary
+    depends_on:
+      - mysql
+    ports:
+      - "8083:8083"  # Ensure this matches your applications exposed port
+    networks:
+      - devops_network
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/devops?createDatabaseIfNotExist=true  # Match with application.properties
+      SPRING_DATASOURCE_USERNAME: user1  # Match with application.properties
+      SPRING_DATASOURCE_PASSWORD: user1  # Match with application.properties
+
+networks:
+  devops_network:
+
+volumes:
+  mysql_data
