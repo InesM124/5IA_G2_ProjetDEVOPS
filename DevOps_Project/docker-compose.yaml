@@ -33,7 +33,7 @@ services:
       SPRING_DATASOURCE_PASSWORD: user1  # Match with application.properties
 
 networks:
-  devops_network:
+  devops_network: {}
 
 volumes:
-  mysql_data
+  mysql_data: {}
