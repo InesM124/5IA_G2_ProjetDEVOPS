@@ -7,9 +7,9 @@ services:
     container_name: mysql
     environment:
       MYSQL_DATABASE: devops  # Changed to match your application properties
-      MYSQL_USER: root  # Changed to match your application properties
-      MYSQL_PASSWORD:   # Changed to match your application properties
-      MYSQL_ROOT_PASSWORD:   # Use the same password for root
+      MYSQL_USER: user1  # Changed to match your application properties
+      MYSQL_PASSWORD: user1  # Changed to match your application properties
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
     ports:
       - "3306:3306"
     volumes:
